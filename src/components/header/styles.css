@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+  width: 15vw;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 35vw;
+}
+
+.menu__info {
+  font-weight: 700;
+}
+
+.menu__info:hover {
+  background-color: black;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.menu__login {
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 3px 10px;
+  background-color: #bd11d0;
+  color: white;
+  position: relative;
+  bottom: 3px;
+}
