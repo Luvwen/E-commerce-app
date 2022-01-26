@@ -8,6 +8,7 @@ import { devices } from '../data/devices';
 import { Carrousel } from './Carrousel';
 
 export const HomeScreen = () => {
+  // Carrousel logic
   const [current, setCurrent] = useState(0);
 
   const length = devices.length;
@@ -19,8 +20,6 @@ export const HomeScreen = () => {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-
-  console.log(current);
 
   return (
     <div className='home'>
