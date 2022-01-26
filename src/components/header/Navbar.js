@@ -1,29 +1,47 @@
 import React, { useState } from 'react';
 
-import './styles.css';
+import styles from './styles.css';
+
+import { FaSun, FaMoon } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
+  // Dark mode background
   const [darkMode, setDarkMode] = useState(false);
 
-  // Dark mode
   const handleToggleDarkMode = () => {
-    document.body.classList.toggle('black');
+    document.body.classList.toggle('darkmode');
     setDarkMode(!darkMode);
+    setIcon(!icon);
   };
 
+  // Dark mode icons
+
+  const [icon, setIcon] = useState(false);
+
   return (
-    <div className={darkMode ? 'wrapper black' : 'wrapper'}>
+    <div className={darkMode ? 'wrapper darkmode' : 'wrapper'}>
       <div className='logo'>
-        <p className='logo__img'>Logo</p>
-        <p className='logo__darkmode' onClick={handleToggleDarkMode}>
-          Dark/Light mode
-        </p>
+        <p className='logo__img'>Santiago Shop</p>
+        {!icon ? (
+          <FaSun className='logo__darkmode' onClick={handleToggleDarkMode} />
+        ) : (
+          <FaMoon className='logo__darkmode' onClick={handleToggleDarkMode} />
+        )}
       </div>
       <div className='menu'>
-        <p className='menu__info'>Productos</p>
-        <p className='menu__info'>Información</p>
-        <p className='menu__info'>Sobre nosotros</p>
-        <p className='menu__login'>Mi cuenta</p>
+        <Link to='/' className='menu__link'>
+          <p className='menu__info'>Productos</p>
+        </Link>
+        <Link to='/' className='menu__link'>
+          <p className='menu__info'>Información</p>
+        </Link>
+        <Link to='/' className='menu__link'>
+          <p className='menu__info'>Sobre nosotros</p>
+        </Link>
+        <Link to='/auth/login' className='menu__link'>
+          <p className='menu__login'>Iniciar sesion</p>
+        </Link>
       </div>
     </div>
   );
