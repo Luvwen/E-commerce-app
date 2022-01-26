@@ -6,10 +6,6 @@
   align-items: center;
 }
 
-.home__img {
-  width: 500px;
-}
-
 .carrousel {
   position: relative;
   height: 70vh;
@@ -25,8 +21,8 @@
 .carrousel__leftarrow {
   position: absolute;
   top: 30%;
+  left: -120px;
   font-size: 3rem;
-  color: #000;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -52,6 +48,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 40vh;
+  margin-left: 25px;
 }
 
 .slide {
