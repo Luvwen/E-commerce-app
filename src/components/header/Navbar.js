@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
-import styles from './styles.css';
-
-import { FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaSun, FaMoon } from 'react-icons/fa';
+import './styles.css';
 
 export const Navbar = () => {
   // Dark mode background
