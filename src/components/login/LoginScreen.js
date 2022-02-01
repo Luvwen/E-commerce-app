@@ -1,29 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { collection, getDocs } from 'firebase/firestore';
+// import db from '../../firestore/firestoreConfig';
+import { useDispatch } from 'react-redux';
+
+import { useForm } from '../../hooks/useForm';
 import './styles.css';
+import { loginWithGoogle, startLoginEmailPassword } from '../../actions/auth';
 
 export const LoginScreen = () => {
+  // useEffect(() => {
+  //   const getUsers = async () => {
+  //     const users = await getDocs(collection(db, 'usuarios'));
+  //     users.forEach((user) => {
+  //       console.log(user.data());
+  //     });
+  //   };
+  //   getUsers();
+  // }, []);
+
+  const dispatch = useDispatch();
+
+  // Form and submit logic
+  const [formValues, handleInputChange, reset] = useForm({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = formValues;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(startLoginEmailPassword(12345, 'sergio'));
+    reset();
+  };
+
+  const handleLoginWithGoogle = () => {
+    dispatch(loginWithGoogle());
+  };
+
   return (
     <div className='background'>
       <div className='login'>
         <p className='login__title'>Login</p>
-        <form className='login__form'>
+        <form onSubmit={handleSubmit} className='login__form'>
           <div className='input-container'>
             <input
               type='text'
               placeholder='email'
               name='email'
               autoComplete='off'
-              value={''}
-              onChange={''}
+              value={email}
+              onChange={handleInputChange}
               className='login__input'
             />
             <input
               type='text'
               placeholder='password'
               name='password'
-              value={''}
-              onChange={''}
+              value={password}
+              onChange={handleInputChange}
               className='login__input'
             />
           </div>
@@ -49,7 +85,7 @@ export const LoginScreen = () => {
                 />
                 <p className='login__desc'>Sign in with twitter</p>
               </div>
-              <div className='login__google'>
+              <div className='login__google' onClick={handleLoginWithGoogle}>
                 <img
                   src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
                   alt='Google button'
