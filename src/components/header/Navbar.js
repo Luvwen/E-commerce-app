@@ -12,7 +12,6 @@ export const Navbar = () => {
     setDarkMode(!darkMode);
     setIcon(!icon);
   };
-
   // Dark mode icons
 
   const [icon, setIcon] = useState(false);
