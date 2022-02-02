@@ -15,6 +15,7 @@
   justify-content: space-evenly;
   width: 15vw;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .logo__darkmode {

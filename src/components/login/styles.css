@@ -129,7 +129,15 @@
 }
 
 .register__title {
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+.register__error {
+  background-color: red;
+  color: black;
+  padding: 5px 10px;
+  width: 50%;
+  margin: 0px auto 10px;
 }
 
 .register-form {
@@ -167,4 +175,9 @@
   border-radius: 2px;
   border: 1px solid black;
   color: white;
+}
+
+.disabled {
+  color: green;
+  background-color: black;
 }
