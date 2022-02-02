@@ -1,6 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import validator from 'validator';
 import { startRegisterWithEmailPasswordName } from '../../actions/auth';
 import { removeError, setError } from '../../actions/ui';
@@ -35,15 +36,19 @@ export const RegisterScreen = () => {
 
   const isFormValid = () => {
     if (name.trim().length === 0) {
-      dispatch(setError('Name is not valid'));
+      dispatch(setError(Swal.fire('Error', 'Name is not valid', 'error')));
       return false;
     } else if (!validator.isEmail(email)) {
-      dispatch(setError('Email is not valid'));
+      dispatch(setError(Swal.fire('Error', 'Email is not valid', 'error')));
       return false;
     } else if (password !== password2 || password.length < 5) {
       dispatch(
         setError(
-          'Password should be at least 6 characters and match each other'
+          Swal.fire(
+            'Error',
+            'Password should be at least 6 characters and match each other',
+            'error'
+          )
         )
       );
       return false;
@@ -52,13 +57,10 @@ export const RegisterScreen = () => {
     return true;
   };
 
-  const { msgError } = useSelector((state) => state.ui);
-
   return (
     <div className='wrapper-register'>
       <div className='register'>
         <h3 className='register__title'>Register</h3>
-        {msgError && <p className='register__error'>{msgError}</p>}
         <form onSubmit={handleSubmit} className='register-form'>
           <input
             type='text'

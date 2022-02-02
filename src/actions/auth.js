@@ -14,6 +14,7 @@ import {
 } from '../firestore/firestoreConfig';
 import { types } from '../types/types';
 import { finishLoading, startLoading } from './ui';
+import Swal from 'sweetalert2';
 
 export const startLoginEmailPassword = (email, password) => {
   return (dispatch) => {
@@ -23,7 +24,10 @@ export const startLoginEmailPassword = (email, password) => {
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire('Error', 'Email o contraseña incorrecta', 'error');
+      });
     dispatch(finishLoading());
   };
 };
@@ -37,8 +41,9 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
         await updateProfile(auth.currentUser, { displayName: name });
         dispatch(login(user.uid, user.displayName));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((e) => {
+        console.log(e);
+        Swal.fire('Error', 'El email ya se encuentra en uso', 'error');
       });
   };
 };
