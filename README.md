@@ -1,44 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Buenos dias a todos, mi nombre es Santiago Baliño y este es mi proyecto EcommerceApp hecho con React, Redux y Firebase para almacenar datos de login.
 
-## Available Scripts
+    - La idea detras de este proyecto es fortalecer y afianzar mis conocimientos con los hooks de React, la creación de una store y uso de Redux y la de usar React Router Dom(v6).
 
-In the project directory, you can run:
+    - Adicionalmente implementé el uso de firebase para registrar usuarios y poder utilizar el login de Google/Facebook/Twitter en la página.
 
-### `npm start`
+    -En esta app se va a poder:
+        -Va a existir una homepage asi como su respectiva register/login page. Hecho ✅
+        -Crear usuarios. Hecho ✅
+        -Hacer login/logout de la página. Hecho ✅
+        -Va a contener carrouseles de imagenes con interactividad en las mismas. Hecho ✅
+        -Navegar entre las distintas páginas usando React Router dom.
+        -Filtros para mostrar los distintos productos por marca/precio.
+        -Agregar productos a un carrito simulando una compra.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Conocimientos obtenidos/afianzados hasta el 02/02/2022:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+-Lograr entender mejor el funcionamiento de los reducers y de la store de Redux asi como la necesidad de usar un middleware(thunk) para gestionar las llamadas asincronas de información.
+-La necesidad de usar rutas públicas y privadas para mantener la seguridad y mejorar la experiencia del usuario al momento de navegar por la página.
+-Usar Firestore para gestionar el registro y login de los usuarios con Facebook, Google y Twitter asi como poder crear usuarios con datos personales.
+-Hacer commits muchos mas limpios y legibles utilizando s-ui/mono .
+-Mejor gesión del proyecto y organización de las carpetas.
