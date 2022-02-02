@@ -13,10 +13,14 @@ Buenos dias a todos, mi nombre es Santiago Baliño y este es mi proyecto Ecommer
         -Filtros para mostrar los distintos productos por marca/precio.
         -Agregar productos a un carrito simulando una compra.
 
-Conocimientos obtenidos/afianzados hasta el 02/02/2022:
+    Conocimientos obtenidos/afianzados hasta el 02/02/2022:
 
--Lograr entender mejor el funcionamiento de los reducers y de la store de Redux asi como la necesidad de usar un middleware(thunk) para gestionar las llamadas asincronas de información.
--La necesidad de usar rutas públicas y privadas para mantener la seguridad y mejorar la experiencia del usuario al momento de navegar por la página.
--Usar Firestore para gestionar el registro y login de los usuarios con Facebook, Google y Twitter asi como poder crear usuarios con datos personales.
--Hacer commits muchos mas limpios y legibles utilizando s-ui/mono .
--Mejor gesión del proyecto y organización de las carpetas.
+    -Lograr entender mejor el funcionamiento de los reducers y de la store de Redux asi como la necesidad de usar un middleware(thunk) para gestionar las llamadas asincronas de        información.
+    
+    -La necesidad de usar rutas públicas y privadas para mantener la seguridad y mejorar la experiencia del usuario al momento de navegar por la página.
+    
+    -Usar Firestore para gestionar el registro y login de los usuarios con Facebook, Google y Twitter asi como poder crear usuarios con datos personales.
+    
+    -Hacer commits muchos mas limpios y legibles utilizando s-ui/mono .
+    
+    -Mejor gesión del proyecto y organización de las carpetas.
