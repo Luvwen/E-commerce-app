@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import './styles.css';
+import { useDispatch } from 'react-redux';
+import { logout, startLogout } from '../../actions/auth';
 
 export const Navbar = () => {
   // Dark mode background
@@ -15,6 +17,12 @@ export const Navbar = () => {
   // Dark mode icons
 
   const [icon, setIcon] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(startLogout());
+  };
 
   return (
     <div className={darkMode ? 'wrapper darkmode' : 'wrapper'}>
@@ -37,7 +45,9 @@ export const Navbar = () => {
           <p className='menu__info'>Sobre nosotros</p>
         </Link>
         <Link to='/auth/login' className='menu__link'>
-          <p className='menu__login'>Iniciar sesion</p>
+          <p onClick={handleLogout} className='menu__login'>
+            Cerrar sesion
+          </p>
         </Link>
       </div>
     </div>

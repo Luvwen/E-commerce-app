@@ -6,7 +6,13 @@ import { useDispatch } from 'react-redux';
 
 import { useForm } from '../../hooks/useForm';
 import './styles.css';
-import { loginWithGoogle, startLoginEmailPassword } from '../../actions/auth';
+import {
+  loginWithGoogle,
+  startLoginEmailPassword,
+  loginWithTwitter,
+  loginWithFacebook,
+} from '../../actions/auth';
+import { useSelector } from 'react-redux';
 
 export const LoginScreen = () => {
   // useEffect(() => {
@@ -31,13 +37,23 @@ export const LoginScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(startLoginEmailPassword(12345, 'sergio'));
+    dispatch(startLoginEmailPassword(email, password));
     reset();
   };
 
   const handleLoginWithGoogle = () => {
     dispatch(loginWithGoogle());
   };
+
+  const handleLoginWithTwitter = () => {
+    dispatch(loginWithTwitter());
+  };
+
+  const handleLoginWithFacebook = () => {
+    dispatch(loginWithFacebook());
+  };
+
+  const { loading } = useSelector((state) => state.ui);
 
   return (
     <div className='background'>
@@ -55,7 +71,7 @@ export const LoginScreen = () => {
               className='login__input'
             />
             <input
-              type='text'
+              type='password'
               placeholder='password'
               name='password'
               value={password}
@@ -63,11 +79,16 @@ export const LoginScreen = () => {
               className='login__input'
             />
           </div>
-          <button className='login__button'>Login</button>
+          <button className='login__button' disabled={loading}>
+            Login
+          </button>
           <div className='social-container'>
             <p className='social-container__text'>Login with social networks</p>
             <div className='login__networks'>
-              <div className='login__facebook'>
+              <div
+                className='login__facebook'
+                onClick={handleLoginWithFacebook}
+              >
                 <img
                   src='https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg'
                   alt='Facebook button'
@@ -76,7 +97,7 @@ export const LoginScreen = () => {
                 />
                 <p className='login__desc'>Sign in with facebook</p>
               </div>
-              <div className='login__twitter'>
+              <div className='login__twitter' onClick={handleLoginWithTwitter}>
                 <img
                   src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg'
                   alt='Twitter button'

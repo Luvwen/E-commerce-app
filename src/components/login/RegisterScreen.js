@@ -1,16 +1,21 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import validator from 'validator';
+import { startRegisterWithEmailPasswordName } from '../../actions/auth';
+import { removeError, setError } from '../../actions/ui';
 
 import { useForm } from '../../hooks/useForm';
 import './styles.css';
 
 export const RegisterScreen = () => {
+  // Form inputs capture and logic
+
   const [values, handleInputChange, reset] = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
+    name: 'Santiago',
+    email: 'santiagobalino@hotmail.com',
+    password: '123456',
+    password2: '123456',
   });
 
   const { name, email, password, password2 } = values;
@@ -20,31 +25,40 @@ export const RegisterScreen = () => {
     reset();
 
     if (isFormValid()) {
-      console.log('Formulario correcto');
+      dispatch(startRegisterWithEmailPasswordName(email, password, name));
     }
   };
+
+  // Validate and display login errors
+
+  const dispatch = useDispatch();
 
   const isFormValid = () => {
     if (name.trim().length === 0) {
-      console.log('Name is not valid');
+      dispatch(setError('Name is not valid'));
       return false;
     } else if (!validator.isEmail(email)) {
-      console.log('Email is not valid');
+      dispatch(setError('Email is not valid'));
       return false;
     } else if (password !== password2 || password.length < 5) {
-      console.log(
-        'Password should be at least 6 characters and match each other'
+      dispatch(
+        setError(
+          'Password should be at least 6 characters and match each other'
+        )
       );
       return false;
     }
-
+    dispatch(removeError());
     return true;
   };
+
+  const { msgError } = useSelector((state) => state.ui);
 
   return (
     <div className='wrapper-register'>
       <div className='register'>
         <h3 className='register__title'>Register</h3>
+        {msgError && <p className='register__error'>{msgError}</p>}
         <form onSubmit={handleSubmit} className='register-form'>
           <input
             type='text'
