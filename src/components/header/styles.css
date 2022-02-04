@@ -7,7 +7,8 @@
   position: fixed;
   top: 0;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  background-color: white;
+  z-index: 10;
+  background-color: #f0edf2;
 }
 
 .logo {
@@ -58,6 +59,11 @@
 }
 
 .menu__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.disabled__styles {
   text-decoration: none;
   color: inherit;
 }

@@ -1,0 +1,119 @@
+.products-page {
+  height: 100vh;
+}
+
+.products-wrapper {
+  display: flex;
+}
+
+/* Filter component */
+
+.filter {
+  min-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.filter__title {
+  font-size: 2em;
+  margin: 50px 0 0 0;
+}
+
+.filter-menu-price {
+  display: flex;
+  align-items: center;
+}
+
+.filter__input {
+  padding: 5px;
+}
+.filter__search {
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.filter-menu-price__select {
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.filter__text {
+  margin: 0px 0 5px 0;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0px;
+}
+
+.filter-price {
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+/* Cards wrapper */
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Card component */
+
+.card-box {
+  position: relative;
+  top: 100px;
+  height: 400px;
+  width: 300px;
+  margin: 0 25px 25px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.card-box:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__img {
+  height: 300px;
+  width: 350px;
+}
+
+.card__text {
+  margin: 0px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.card__price {
+}
+
+.error__title {
+  position: absolute;
+  top: 150px;
+  right: 500px;
+}
