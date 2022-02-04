@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import './styles.css';
 import { useDispatch } from 'react-redux';
-import { logout, startLogout } from '../../actions/auth';
+import { startLogout } from '../../actions/auth';
 
 export const Navbar = () => {
   // Dark mode background
@@ -25,9 +25,11 @@ export const Navbar = () => {
   };
 
   return (
-    <div className={darkMode ? 'wrapper darkmode' : 'wrapper'}>
+    <div className='wrapper'>
       <div className='logo'>
-        <p className='logo__img'>Santiago Shop</p>
+        <Link to='/' className='disabled__styles'>
+          <p className='logo__img'>Santiago Shop</p>
+        </Link>
         {!icon ? (
           <FaSun className='logo__darkmode' onClick={handleToggleDarkMode} />
         ) : (
@@ -35,7 +37,7 @@ export const Navbar = () => {
         )}
       </div>
       <div className='menu'>
-        <Link to='/' className='menu__link'>
+        <Link to='/products' className='menu__link'>
           <p className='menu__info'>Productos</p>
         </Link>
         <Link to='/' className='menu__link'>

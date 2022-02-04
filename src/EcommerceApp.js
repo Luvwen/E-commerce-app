@@ -6,8 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { login } from './actions/auth';
 import { AuthRouter } from './authRouter';
 import { Home } from './components/Home';
-import { LoginScreen } from './components/login/LoginScreen';
-import { RegisterScreen } from './components/login/RegisterScreen';
+import { ProductsPage } from './components/products/ProductsPage';
 import { app } from './firestore/firestoreConfig';
 
 export const EcommerceApp = () => {
@@ -43,10 +42,11 @@ export const EcommerceApp = () => {
           <Route path='/*' element={<Navigate replace to='auth/login' />} />
         )}
         {isAutenticated && (
+          <Route path='/products' element={<ProductsPage />} />
+        )}
+        {isAutenticated && (
           <Route path='/auth/*' element={<Navigate replace to='/' />} />
         )}
-        {/* <Route path='/auth/login' element={<LoginScreen />} />
-        <Route path='/auth/register' element={<RegisterScreen />} /> */}
         <Route path='auth/*' element={<AuthRouter />} />
       </Routes>
     </BrowserRouter>

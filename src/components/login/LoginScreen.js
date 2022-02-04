@@ -32,7 +32,6 @@ export const LoginScreen = () => {
     email: '',
     password: '',
   });
-
   const { email, password } = formValues;
 
   const handleSubmit = (e) => {
