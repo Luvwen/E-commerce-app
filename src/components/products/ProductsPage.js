@@ -33,24 +33,26 @@ export const ProductsPage = () => {
   // Checkbox input logic
   const brands = ['Samsung', 'Motorola', 'Lg', 'Alcatel', 'TCL'];
 
-  const [checkedState, setCheckedState] = useState(
-    new Array(brands.length).fill(false)
-  );
+  const [checked, setChecked] = useState([]);
 
-  const [deviceSelected, setDeviceSelected] = useState();
+  const handleToggle = (value) => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
 
-  const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
-    setDeviceSelected(
-      devices.filter((device) => device.brand === brands[position])
-    );
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+    handleFilters(newChecked);
   };
-  // useEffect(() => {
-  //   console.log(deviceSelected);
-  // }, [deviceSelected]);
+
+  const handleFilters = (filters) => {
+    console.log(filters);
+  };
+
   return (
     <div className='products-page'>
       <Navbar />
@@ -62,13 +64,6 @@ export const ProductsPage = () => {
             <p className='filter-menu__text'>
               Cantidad: <span>25</span>
             </p>
-            <div className='filter-menu-price'>
-              <p className='filter-menu-price__title'>Ordenar por </p>
-              <select className='filter-menu-price__select'>
-                <option>Mayor precio</option>
-                <option>Menor precio</option>
-              </select>
-            </div>
             <p className='filter__text'>Modelo del dispositivo</p>
             <form>
               <input
@@ -91,10 +86,9 @@ export const ProductsPage = () => {
                       <input
                         type='checkbox'
                         id={index}
+                        onChange={() => handleToggle(brand)}
                         name={brand}
-                        value={brand}
-                        checked={checkedState[index]}
-                        onChange={() => handleOnChange(index)}
+                        checked={checked.indexOf(brand) === -1 ? false : true}
                       />
                       <label htmlFor={index}>{brand}</label>
                     </li>
@@ -123,7 +117,7 @@ export const ProductsPage = () => {
           <ProductsCards
             newDevices={newDevices}
             search={search}
-            deviceSelected={deviceSelected}
+            checked={checked}
           />
         </div>
       </div>

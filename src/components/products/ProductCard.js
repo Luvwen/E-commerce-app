@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { devices } from '../data/devices';
 
 import './styles.css';
 
-export const ProductCard = ({ newDevices, search, deviceSelected }) => {
-  console.log(deviceSelected);
+export const ProductCard = ({ newDevices, search, checked }) => {
+  const [mobiles, setMobiles] = useState([]);
+  useEffect(() => {
+    setMobiles(devices.filter((device) => device.brand === checked.toString()));
+  }, [checked]);
+
   return (
     <>
       {newDevices.length >= 1 ? (
@@ -25,8 +29,8 @@ export const ProductCard = ({ newDevices, search, deviceSelected }) => {
             </div>
           );
         })
-      ) : deviceSelected ? (
-        deviceSelected.map((device, index) => {
+      ) : checked.length > 0 ? (
+        mobiles.map((device, index) => {
           return (
             <div className='card-box' key={index}>
               <div className='card'>
