@@ -25,7 +25,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className={darkMode === true ? 'wrapper darkmode' : 'wrapper'}>
       <div className='logo'>
         <Link to='/' className='disabled__styles'>
           <p className='logo__img'>Santiago Shop</p>
