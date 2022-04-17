@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/E-commerce-app/static/css/main.a5b399b6.css",
+    "main.js": "/E-commerce-app/static/js/main.64e71d46.js",
+    "static/media/Lg1.png": "/E-commerce-app/static/media/Lg1.8df31f1f11adcd0fee57.png",
+    "static/media/Lg2.png": "/E-commerce-app/static/media/Lg2.b6607a545e0575044d1e.png",
+    "static/media/Alcatel1.png": "/E-commerce-app/static/media/Alcatel1.639ff2e808476147512f.png",
+    "static/media/Alcatel2.png": "/E-commerce-app/static/media/Alcatel2.c4dc7abee911bd834744.png",
+    "static/media/TCL4.png": "/E-commerce-app/static/media/TCL4.7301e21daad9b19c1584.png",
+    "static/media/Samsung8.png": "/E-commerce-app/static/media/Samsung8.bf3ea29de2bb33979573.png",
+    "static/media/Alcatel3.png": "/E-commerce-app/static/media/Alcatel3.69dd99e973c3eab1933a.png",
+    "static/media/TCL3.png": "/E-commerce-app/static/media/TCL3.4941f1eb7745531d1924.png",
+    "static/media/Samsung2.png": "/E-commerce-app/static/media/Samsung2.10aaeb4a961dfd9459e9.png",
+    "static/media/TCL1.png": "/E-commerce-app/static/media/TCL1.3390e280d2b9cc5153d7.png",
+    "static/media/Lg4.png": "/E-commerce-app/static/media/Lg4.6ec6715902c2edaa25f8.png",
+    "static/media/Samsung4.png": "/E-commerce-app/static/media/Samsung4.593f6da779d213445ea7.png",
+    "static/media/Samsung6.png": "/E-commerce-app/static/media/Samsung6.01ce1e036c1367836cd7.png",
+    "static/media/Samsung7.png": "/E-commerce-app/static/media/Samsung7.47fa23ec5dec5dad4f67.png",
+    "static/media/Alcatel4.png": "/E-commerce-app/static/media/Alcatel4.bb36b15c4e0472641503.png",
+    "static/media/Motorola3.png": "/E-commerce-app/static/media/Motorola3.3dedcbac4e9c59b40bc0.png",
+    "static/media/Samsung5.png": "/E-commerce-app/static/media/Samsung5.4da3686fc8b0d01eb895.png",
+    "static/media/Lg3.png": "/E-commerce-app/static/media/Lg3.e64ad482514ba885408f.png",
+    "static/media/Motorola2.png": "/E-commerce-app/static/media/Motorola2.69ec8e73aea5455afa53.png",
+    "static/media/Motorola5.png": "/E-commerce-app/static/media/Motorola5.1768e5efde696c5ef7c2.png",
+    "static/media/Motorola1.png": "/E-commerce-app/static/media/Motorola1.1931905070768e53b07f.png",
+    "static/media/Samsung1.png": "/E-commerce-app/static/media/Samsung1.25f786fb40922238d194.png",
+    "static/media/TCL2.png": "/E-commerce-app/static/media/TCL2.604a3e643e7d8723458e.png",
+    "static/media/Motorola4.png": "/E-commerce-app/static/media/Motorola4.74ce9660ceea51c5a6db.png",
+    "static/media/Samsung3.png": "/E-commerce-app/static/media/Samsung3.c4241ae5e16212c9be26.png",
+    "static/media/Samsung9.png": "/E-commerce-app/static/media/Samsung9.c4241ae5e16212c9be26.png",
+    "index.html": "/E-commerce-app/index.html",
+    "main.a5b399b6.css.map": "/E-commerce-app/static/css/main.a5b399b6.css.map",
+    "main.64e71d46.js.map": "/E-commerce-app/static/js/main.64e71d46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5b399b6.css",
+    "static/js/main.64e71d46.js"
+  ]
+}
